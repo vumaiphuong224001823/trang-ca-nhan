@@ -64,6 +64,7 @@
             padding: 10px 15px;
             border: 2px solid #f4a6c0;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         .menu a:hover {
@@ -79,7 +80,23 @@
         .contact a:hover {
             text-decoration: underline;
         }
+
+        section {
+            display: none;
+            padding: 10px 0;
+        }
+
+        section.active {
+            display: block;
+        }
     </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </head>
 
 <body>
@@ -88,14 +105,14 @@
         <h2>Giới Thiệu Bản Thân</h2>
 
         <div class="menu">
-            <a href="#about">Giới thiệu</a>
-            <a href="#hobbies">Sở thích</a>
-            <a href="#dreams">Ước mơ</a>
-            <a href="#skills">Kỹ năng</a>
-            <a href="#contact">Liên hệ</a>
+            <a href="#" onclick="showSection('about')">Giới thiệu</a>
+            <a href="#" onclick="showSection('hobbies')">Sở thích</a>
+            <a href="#" onclick="showSection('dreams')">Ước mơ</a>
+            <a href="#" onclick="showSection('skills')">Kỹ năng</a>
+            <a href="#" onclick="showSection('contact')">Liên hệ</a>
         </div>
 
-        <section id="about">
+        <section id="about" class="active">
             <p><strong>Họ tên:</strong> Vũ Mai Phương</p>
             <p><strong>Ngày sinh:</strong> 19/11/2006</p>
             <p><strong>Quê quán:</strong> Thanh Hóa</p>
@@ -105,12 +122,13 @@
 
         <section id="hobbies">
             <h3>Sở thích</h3>
-            <p>Đọc sách, xem phim, du lịch, nghe nhạc.</p>
+            <pre><p>Đọc sách, xem phim, du lịch, nghe nhạc. Chơi game lúc rảnh và stress
+             Thích xem đấu giải game, đội tuyển yêu thích "SaiGon PhanTom </p></pre>
         </section>
 
         <section id="dreams">
             <h3>Ước mơ</h3>
-            <p>Trở thành một lập trình viên chuyên nghiệp.</p>
+            <p>Trở thành một lập trình viên chuyên nghiệp, có nhiều tiền thích làm gì mua gì cũng được</p>
         </section>
 
         <section id="skills">
@@ -130,10 +148,6 @@
                 Số điện thoại: 0356570953
             </p>
         </section>
-
-        <div class="button" onclick="window.history.back()">
-            <a href="#">Quay Lại</a>
-        </div>
     </div>
 </body>
 </html>
