@@ -47,13 +47,100 @@
             object-fit: cover;
             margin: 20px auto;
             border: 3px solid #f4a6c0;
-            mp4" frameborder="0" allowfullscreen></iframe>
+            box-shadow: 0 4px 8px rgba(204, 102, 153, 0.3);
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #cc6699;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 2px solid #f4a6c0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .menu a:hover {
+            background-color: #f8c8dc;
+        }
+
+        .contact a {
+            color: #cc6699;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            display: none;
+            padding: 10px 0;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        iframe {
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Portfolio Cá Nhân</h1>
+        <h2>Giới Thiệu Bản Thân</h2>
+
+        <div class="menu">
+            <a href="#" onclick="showSection('about')">Giới thiệu</a>
+            <a href="#" onclick="showSection('hobbies')">Sở thích</a>
+            <a href="#" onclick="showSection('dreams')">Ước mơ</a>
+            <a href="#" onclick="showSection('skills')">Kỹ năng</a>
+            <a href="#" onclick="showSection('contact')">Liên hệ</a>
+        </div>
+
+        <section id="about" class="active">
+            <p><strong>Họ tên:</strong> Vũ Mai Phương</p>
+            <p><strong>Ngày sinh:</strong> 19/11/2006</p>
+            <p><strong>Quê quán:</strong> Thanh Hóa</p>
+            <p><strong>Mã sinh viên:</strong> 224001823</p>
+            <p><strong>Ngành học:</strong> Công nghệ thông tin - Trường Đại học Thủ Đô Hà Nội</p>
+        </section>
+
+        <section id="hobbies">
+            <h3>Sở thích</h3>
+            <p>Đọc sách, xem phim, du lịch, nghe nhạc, thích xem đấu giải game. Đội tuyển yêu thích: <strong>SaiGon PhanTom</strong>.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=HXkh7EOqcQ4" allowfullscreen></iframe>
             </div>
         </section>
 
         <section id="dreams">
             <h3>Ước mơ</h3>
-            <p>Có thể kiếm ra thật nhiều tiền, thích làm gì thì làm, thích mua gì thì mua và có thể đi du lịch được khắp mọi nơi.</p>
+            <p>Có một công việc phù hợp, có thể kiếm ra thật nhiều tiền, thích làm gì thì làm, thích mua gì thì mua và có thể đi du lịch được khắp mọi nơi.</p>
         </section>
 
         <section id="skills">
